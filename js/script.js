@@ -1,4 +1,3 @@
-
 /* Aula 20 MaiaQuiz  */
 let titulo     = document.querySelector('h1')
 let instrucoes = document.querySelector('#instrucoes')
@@ -14,6 +13,7 @@ let somAplausos = document.querySelector('#somAplausos')
 
 // PERGUNTA
 let numQuestao = document.querySelector('#numQuestao')
+let imgQuestao = document.querySelector('.imagemDaQuestao img')  // ADICIONE
 let pergunta   = document.querySelector('#pergunta')
 
 // ALTERNATIVAS
@@ -29,6 +29,7 @@ let alternativas = document.querySelector('#alternativas')
 
 const q0 = {
     numQuestao   : 0,
+    imagem       : '0.png',  // ADICIONE
     pergunta     : "Pergunta",
     alternativaA : "Alternativa A",
     alternativaB : "Alternativa B",
@@ -38,6 +39,7 @@ const q0 = {
 }
 const q1 = {
     numQuestao   : 1,
+    imagem       : '1.png',  // ADICIONE
     pergunta     : "Boreal é o mesmo que...",
     alternativaA : "Sul",
     alternativaB : "Leste",
@@ -47,6 +49,7 @@ const q1 = {
 }
 const q2 = {
     numQuestao   : 2,
+    imagem       : '2.png',  // ADICIONE
     pergunta     : "Qual é a capital do Brasil?",
     alternativaA : "Rio de Janeiro",
     alternativaB : "Brasília",
@@ -56,6 +59,7 @@ const q2 = {
 }
 const q3 = {
     numQuestao   : 3,
+    imagem       : '3.png',  // ADICIONE
     pergunta     : "Austral é o mesmo que...",
     alternativaA : "Oeste",
     alternativaB : "Leste",
@@ -65,6 +69,7 @@ const q3 = {
 }
 const q4 = {
     numQuestao   : 4,
+    imagem       : '4.png',  // ADICIONE
     pergunta     : "A linha do Equador divide a Terra em...",
     alternativaA : "Leste e Oeste",
     alternativaB : "Norte e Sul",
@@ -74,6 +79,7 @@ const q4 = {
 }
 const q5 = {
     numQuestao   : 5,
+    imagem       : '5.png',  // ADICIONE
     pergunta     : "Nascente é o mesmo que...",
     alternativaA : "Lado que o sol nasce",
     alternativaB : "Abaixo do Equador",
@@ -83,6 +89,7 @@ const q5 = {
 }
 const q6 = {
     numQuestao   : 6,
+    imagem       : '6.png',  // ADICIONE
     pergunta     : "Qual é o clima predominante do Brasil?",
     alternativaA : "Polar",
     alternativaB : "Tropical",
@@ -92,6 +99,7 @@ const q6 = {
 }
 const q7 = {
     numQuestao   : 7,
+    imagem       : '7.png',  // ADICIONE
     pergunta     : "Poente é o mesmo que...",
     alternativaA : "Lado onde o sol se põe",
     alternativaB : "Lado onde o sol nasce",
@@ -101,6 +109,7 @@ const q7 = {
 }
 const q8 = {
     numQuestao   : 8,
+    imagem       : '8.png',  // ADICIONE
     pergunta     : "O Brasil se localiza em qual continente?",
     alternativaA : "África",
     alternativaB : "Europa",
@@ -110,6 +119,7 @@ const q8 = {
 }
 const q9 = {
     numQuestao   : 9,
+    imagem       : '9.png',  // ADICIONE
     pergunta     : "Qual é a única capital do Brasil cortada pela linha do Equador?",
     alternativaA : "Belém",
     alternativaB : "São Luís",
@@ -119,6 +129,7 @@ const q9 = {
 }
 const q10 = {
     numQuestao   : 10,
+    imagem       : '10.png',  // ADICIONE
     pergunta     : "Considerando a extensão territorial o Brasil é o ...",
     alternativaA : "3º maior",
     alternativaB : "2º maior",
@@ -141,6 +152,7 @@ total.textContent = totalDeQuestoes
 
 // MONTAR A 1a QUESTAO COMPLETA, para iniciar o Quiz
 numQuestao.textContent = q1.numQuestao
+imgQuestao.setAttribute('src', 'images/'+q1.imagem)  // ADICIONE
 pergunta.textContent   = q1.pergunta
 a.textContent = q1.alternativaA
 b.textContent = q1.alternativaB
@@ -157,6 +169,7 @@ d.setAttribute('value', '1D')
 function proximaQuestao(nQuestao) {
     numero.textContent = nQuestao
     numQuestao.textContent = questoes[nQuestao].numQuestao
+    imgQuestao.setAttribute('src', 'images/'+questoes[nQuestao].imagem) // ADICIONE
     pergunta.textContent   = questoes[nQuestao].pergunta
     a.textContent = questoes[nQuestao].alternativaA
     b.textContent = questoes[nQuestao].alternativaB
